@@ -1,0 +1,351 @@
+.faqs {
+  margin-top: 3rem;
+  .faq_header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding-left: 1.25rem;
+    .title {
+      color: $blue;
+      display: inline-block;
+      font-size: 4rem;
+      margin-left: 1.25rem;
+    }
+    img {
+      height: 8rem;
+    }
+  }
+  .body {
+    position: relative;
+    overflow: hidden;
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      object-fit: cover;
+      z-index: -1;
+      height: 100%;
+      filter: brightness(20%);
+    }
+    .question_box {
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      margin-top: 5rem;
+      margin-bottom: 8rem;
+      .question {
+        flex-grow: 1;
+        color: $white;
+        width: 30%;
+        padding: 0.625rem;
+      }
+    }
+  }
+
+  .margin-bottom {
+    margin-bottom: 6rem;
+  }
+
+  .faqs_container {
+    position: relative;
+    padding: 1.25rem;
+    border: 2px $gray-ccc solid;
+    filter: drop-shadow(0 0 0.5rem gray);
+    background: $white;
+    h2 {
+      margin: 0;
+      padding-top: 1.25rem;
+    }
+    .folder_buttons {
+      display: inline-block;
+      margin-bottom: 1.25rem;
+      .custom {
+        color: $gray;
+        padding: 1.25rem 0;
+        background: transparent;
+        outline: none;
+        border: none;
+        width: 7rem;
+        display: inline-flex;
+        justify-content: center;
+        text-decoration: none;
+        &.active {
+          color: $blue;
+          font-weight: 800;
+        }
+        ~ .underline {
+          @include Transform(translate(0));
+          width: 7rem;
+          height: 0.25rem;
+          background-color: $blue;
+          @include Transition(250ms ease-in-out transform);
+          &.active-0 {
+            @include Transform(translateX(0));
+          }
+          &.active-1 {
+            @include Transform(translateX(7rem));
+          }
+          &.active-2 {
+            @include Transform(translateX(14rem));
+          }
+        }
+      }
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      right: 0;
+      left: 0;
+      height: 1rem;
+      background-color: $gold;
+      top: -1rem;
+    }
+
+    &:after {
+      position: absolute;
+      content: "";
+      right: 0;
+      left: 0;
+      height: 2rem;
+      background-color: $blue;
+      top: -3rem;
+    }
+  }
+
+  .folder_question {
+    .question_container {
+      cursor: pointer;
+      margin-bottom: 1.25rem;
+      max-height: 4rem;
+      height: auto;
+      overflow: hidden;
+      border-bottom: $black 1px solid;
+      position: relative;
+      @include Transition(250ms ease-in-out all);
+      p {
+        padding-left: 1.25rem;
+        margin-right: 4rem;
+      }
+      h3 {
+        padding-right: 3rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 1.25rem;
+        color: $gray;
+      }
+      svg {
+        position: absolute;
+        top: 50%;
+        right: 1.25rem;
+        @include Transform(translateY(-50%));
+        font-size: 1.5rem;
+        color: $blue;
+        @include Transition(250ms ease-in-out all);
+        cursor: pointer;
+      }
+      &:before {
+        position: absolute;
+        content: "";
+        width: 0.25rem;
+        height: 50%;
+        left: 0;
+        top: 0;
+        background: $gold;
+      }
+      &:after {
+        position: absolute;
+        content: "";
+        width: 0.25rem;
+        height: 50%;
+        left: 0;
+        bottom: 0;
+        background: $blue;
+      }
+      &.active {
+        max-height: 20rem;
+        h3 {
+          color: $black;
+        }
+        svg {
+          @include Transform(rotate(180deg));
+          color: $gold;
+        }
+      }
+    }
+  }
+  .inquiry {
+    .email_container {
+      position: relative;
+      padding: 1.25rem;
+      border: 2px $gray-ccc solid;
+      filter: drop-shadow(0 0 0.5rem gray);
+      margin-bottom: 3rem;
+      background: $white;
+      display: flex;
+      flex-flow: column wrap;
+      > *:not(:last-child) {
+        margin-bottom: 1.25rem;
+      }
+      .message {
+        flex-basis: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+          height: 4rem;
+        }
+      }
+
+      input[type="email"] {
+        align-self: flex-start;
+        width: 30ch;
+        padding: 0.5rem 0.75rem;
+        font-family: $Raleway;
+        border: $gray 1px solid;
+        border-radius: 4px;
+        @include Transition(250ms ease-in-out all);
+        outline: none;
+        &:focus {
+          box-shadow: 0 0 0.25rem $blue;
+          border-color: $blue;
+        }
+      }
+
+      textarea {
+        font-family: $Raleway;
+        padding: 0.5rem 0.75rem;
+        resize: vertical;
+        border: $gray 1px solid;
+        @include Transition(250ms ease-in-out all);
+        outline: none;
+        border-radius: 4px;
+        &:focus {
+          box-shadow: 0 0 0.25rem $blue;
+          border-color: $blue;
+        }
+      }
+
+      .btn_send {
+        align-self: flex-end;
+      }
+
+      &:before {
+        position: absolute;
+        content: "";
+        right: 0;
+        left: 0;
+        height: 1rem;
+        background-color: $gold;
+        top: -1rem;
+      }
+
+      &:after {
+        position: absolute;
+        content: "";
+        right: 0;
+        left: 0;
+        height: 2rem;
+        background-color: $blue;
+        top: -3rem;
+      }
+    }
+  }
+
+  .prompt {
+    position: fixed;
+    background-color: transparentize($black, 0.5);
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: none;
+    &.active {
+      display: block;
+    }
+    > div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include Transform(translate(-50%, -50%));
+      background-color: $white;
+      div:first-of-type {
+        width: 100%;
+        height: 2rem;
+        background-color: $blue;
+      }
+      div:nth-of-type(2) {
+        width: 100%;
+        height: 1rem;
+        background-color: $gold;
+      }
+      div:last-of-type {
+        padding: 1rem 2rem;
+        text-align: right;
+        p {
+          margin-top: 0;
+          display: flex;
+          align-items: center;
+          font-weight: 800;
+          svg {
+            margin-right: 1.25rem;
+            font-size: 1.5rem;
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+  @include breakpoint-screen(xs) {
+    .faq_header {
+      padding-left: 0;
+      .title {
+        margin-right: 1.25rem;
+        font-size: 3rem;
+      }
+      img {
+        display: none;
+      }
+    }
+    .body {
+      .question_box {
+        margin-top: 1rem;
+        margin-bottom: 4rem;
+        .question {
+          width: 100%;
+          padding: 1rem;
+        }
+      }
+    }
+    .faqs_container {
+      .folder_buttons {
+        .custom {
+          width: 5.75rem;
+          ~ .underline {
+            width: 5.75rem;
+            &.active-0 {
+              @include Transform(translateX(0));
+            }
+            &.active-1 {
+              @include Transform(translateX(5.75rem));
+            }
+            &.active-2 {
+              @include Transform(translateX(11.5rem));
+            }
+          }
+        }
+      }
+      .question_container {
+        h3 {
+          font-size: 1.125rem;
+        }
+      }
+    }
+  }
+}

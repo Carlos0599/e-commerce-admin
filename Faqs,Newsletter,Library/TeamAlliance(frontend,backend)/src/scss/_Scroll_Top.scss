@@ -1,0 +1,49 @@
+.btn-scroll-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  padding: 1rem;
+  border-radius: 100%;
+  background-image: linear-gradient(45deg, $blue, $gold);
+  background-size: 200%;
+  background-position: left bottom;
+  @include Transition(500ms ease-in-out all);
+  box-shadow: 0 0 0.5rem $black;
+  svg {
+    font-size: 1rem;
+    color: $white;
+  }
+  &:hover {
+    background-position: top right;
+    svg {
+      @include Animation(
+        icon-scroll 750ms 1 cubic-bezier(0.175, 0.885, 0.32, 1.275)
+      );
+    }
+  }
+  &.hide {
+    @include Transform(translateY(5rem) rotate(180deg));
+  }
+  @keyframes icon-scroll {
+    0% {
+      @include Transform(translateY(0));
+    }
+    45% {
+      @include Transform(translateY(-3rem));
+    }
+    50% {
+      opacity: 0;
+    }
+    55% {
+      @include Transform(translateY(3rem));
+    }
+    100% {
+      @include Transform(translateY(0));
+    }
+  }
+  @include breakpoint-screen(xs) {
+    display: none;
+  }
+}

@@ -1,0 +1,201 @@
+.library {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  h1 {
+    margin: 0;
+  }
+  h3 {
+    color: $blue;
+  }
+  .library_button {
+    text-align: center;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  form {
+    position: sticky;
+    top: 0;
+    background: $white;
+    z-index: +1;
+    > div {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+      .search_container {
+        position: relative;
+        border-radius: 8px;
+        box-shadow: 0 0.25rem 0.25rem $black-999;
+        display: inline-flex;
+        align-items: center;
+        overflow: hidden;
+        background: $white;
+        input {
+          width: 30ch;
+          border: none;
+          padding: 0.75rem;
+          font-size: 1rem;
+          font-family: $Raleway;
+          &:focus {
+            outline: none;
+          }
+        }
+        button.custom {
+          padding: 0.75rem;
+          color: white;
+          font-size: 20px;
+          border-radius: 8px;
+        }
+      }
+      .year_container {
+        display: inline-flex;
+        align-items: center;
+        box-shadow: 0 0.25rem 0.25rem $black-999;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        justify-self: right;
+
+        button.custom {
+          padding: 0.75rem;
+          color: white;
+          font-size: 20px;
+          border-radius: 8px;
+          position: absolute;
+          right: 0;
+          pointer-events: none;
+          svg {
+            @include Transition(250ms ease-in-out transform);
+          }
+        }
+        .library_year {
+          width: 20ch;
+          border: none;
+          padding: 0.75rem;
+          font-family: $Raleway;
+          font-size: 1rem;
+          -webkit-appearance: none;
+          appearance: none;
+          &:focus {
+            outline: none;
+            ~ button {
+              svg {
+                @include Transform(rotate(180deg));
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .card_holder {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 1.25rem;
+    width: 100%;
+    margin-bottom: 3rem;
+    .card {
+      border: 2px $gray-ccc solid;
+      border-radius: 4px;
+      @include Transition(250ms ease-in-out all);
+
+      overflow: hidden;
+      .card_header {
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          aspect-ratio: 16/9;
+        }
+      }
+      .card_body {
+        padding: 1.25rem;
+        div {
+          text-align: right;
+        }
+        .title {
+          margin-top: 0;
+        }
+      }
+      &:hover {
+        box-shadow: 0 0 0.5rem gray;
+      }
+    }
+  }
+  @include breakpoint-screen(lg) {
+    form {
+      > div {
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        .search_container {
+          flex-grow: 1;
+          margin-bottom: 1.25rem;
+          width: 100%;
+          input {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .card_holder {
+      grid-template-columns: auto auto;
+    }
+  }
+
+  @include breakpoint-screen(xs) {
+    form {
+      position: relative;
+      > div {
+        flex-flow: column wrap;
+        justify-content: flex-end;
+        padding-top: 0;
+        padding-bottom: 0;
+        .search_container {
+          width: auto;
+          margin: 1.25rem 1.25rem 0 1.25rem;
+          input {
+            width: 100%;
+          }
+        }
+        .year_container {
+          flex-grow: 1;
+          margin: 1.25rem;
+          .library_year {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .card_holder {
+      grid-gap: 0;
+      grid-template-columns: auto;
+      .card {
+        border-radius: 0;
+        border: none;
+      }
+    }
+  }
+}
+
+.view_library {
+  margin-bottom: 3rem;
+  .content {
+    height: 66rem;
+    position: relative;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 9/16;
+  }
+  @include breakpoint-screen(xs) {
+    .header {
+      text-transform: capitalize;
+    }
+  }
+}
