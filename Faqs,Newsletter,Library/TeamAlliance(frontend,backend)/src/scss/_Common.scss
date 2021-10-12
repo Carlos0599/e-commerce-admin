@@ -1,0 +1,98 @@
+$header: $blue;
+$header2: $gold;
+$text-white: $white;
+$text-black: $black;
+$text-gray: $black-999;
+
+.container {
+  margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 29.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 31rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 46rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 57.25rem;
+  }
+}
+
+:root {
+  font-family: $Raleway;
+  font-size: 16px;
+}
+
+.header {
+  color: $header;
+  text-transform: uppercase;
+  span {
+    color: $gold;
+  }
+  @include breakpoint-screen(xs) {
+    padding: 0 1.25rem;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-family: $Raleway;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 250ms ease-in-out all;
+  border: none;
+  .icon {
+    margin-left: 5px;
+  }
+  &.primary {
+    color: $text-white;
+    &.solid {
+      padding: 0.5rem;
+      background-color: $header;
+      border: none;
+      &:hover {
+        background-color: lighten($header, 10%);
+      }
+    }
+  }
+  &.secondary {
+    color: $gold;
+    &.outline {
+      background-color: $text-white;
+      border: $gold solid 1px;
+      padding: 0.5rem;
+      &:hover {
+        background-color: $gold;
+        color: $text-white;
+      }
+    }
+  }
+}
