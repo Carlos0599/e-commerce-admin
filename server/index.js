@@ -1,13 +1,18 @@
-const express = require("express");
+const bodyParser = require('body-parser');
+const express = require('express');
+const cors = require('cors');
 const app = express();
-const mysql = require('mysql');
 
-const db = mysql.createPool({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "centie"
-})
+const innovationRoutes = require('./innovations/routes/innovationRoutes.js');
+const investmentRoutes = require('./innovations/routes/investmentRoutes.js');
+const userRoutes = require('./innovations/routes/userRoutes.js');
+
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use('/api/innovations', innovationRoutes);
+app.use('/api/investment', investmentRoutes);
+app.use('/api/user', userRoutes);
 
 
 // app.get("/", (req, res) => {

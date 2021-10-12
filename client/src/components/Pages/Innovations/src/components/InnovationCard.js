@@ -5,32 +5,44 @@ import CardContent from "@material-ui/core/CardContent";
 import { CardMedia, Typography } from "@material-ui/core";
 import { CardActions } from "@material-ui/core";
 import { Button } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-export default function InnovationCard({ SampleContent }) {
+
+export default function InnovationCard({ innovation }) {
+
+  
   return (
     <Card>
       <CardHeader
-        title={SampleContent.title}
-        subheader={SampleContent.status}
+        title={innovation.innovation_title}
+        subheader={innovation.innovation_status}
       />
-      <CardMedia component="img" height="194" image={SampleContent.img} />
+      <CardMedia component="img" height="194" image={innovation.innovation_pictures} />
       <CardContent>
-        <Typography>{SampleContent.description}</Typography>
+        <Typography>{innovation.innovation_description}</Typography>
 
         <Typography>
-          Innovator: <strong>{SampleContent.name}</strong>
+          Innovator: <strong>innovator #{innovation.innovator_id}</strong>
         </Typography>
       </CardContent>
       <CardActions>
+        <Link
+        to={{
+          pathname: "/innovationSpecific",
+          state: {innovation : innovation}
+          
+        }}>
         <Button
           variant="contained"
           color="primary"
           size="small"
-          href="/innovationSpecific"
-        >
+          href= "/innovationSpecific"  
+
+> 
           View Item
         </Button>
+        </Link>
       </CardActions>
     </Card>
   );

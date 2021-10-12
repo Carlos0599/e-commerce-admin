@@ -1,0 +1,27 @@
+//-------INVESTMENT API------------------//
+### GET ALL
+GET http://localhost:3001/api/investment
+
+### GET BY ID
+GET http://localhost:3001/api/investment/3
+
+### CREATE
+POST http://localhost:3001/api/investment
+Content-Type: application/json
+
+{
+    "invest_id"           : 4,
+    "invest_amount"       : 3000,
+    "invest_date"         : "2021-10-02",
+    "innovation_id"       : 1,
+    "investor_id"         : 1
+}
+
+### CREATE
+PUT  http://localhost:3001/api/investment/imageupload
+Content-Type: multipart/form-data
+# Content-Type: application/javascript
+
+{
+    "invest_proofPayment" : "Sample.jpeg",
+}
