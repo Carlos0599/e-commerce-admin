@@ -1,4 +1,4 @@
-import Create from "./components/Pages/Innovation";
+import Create from "../src/components/innovation/components/Pages/Innovation";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import Layout from "./components/Layout";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -7,6 +7,8 @@ import users from "./components/Pages/users";
 import productsOrders from "./components/Pages/productsOrders";
 import exhibits from "./components/Pages/exhibits";
 import reports from "./components/Pages/reports";
+import InnovationSecondPage from "../src/components/innovation/components/Pages/InnovationSecondPage";
+import Innovationthree from "../src/components/innovation/components/Pages/InnovationThree";
 
 const theme = createMuiTheme({
   palette: {
@@ -40,6 +42,17 @@ function App() {
               />
               <Route exact path="/exhibits" component={exhibits} />
               <Route exact path="/reports" component={reports} />
+              <Route exact path="/create" component={Create} />
+              <Route
+                exact
+                path="/innovationSpecific"
+                component={InnovationSecondPage}
+              />
+              <Route
+                exact
+                path="/innovationInvest"
+                component={Innovationthree}
+              />
             </Switch>
           </div>
         </div>
