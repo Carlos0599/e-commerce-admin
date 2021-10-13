@@ -1,0 +1,87 @@
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+}
+
+.modal__content {
+  border-radius: 1rem;
+  background: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+.modal__content_label {
+  text-align: center;
+  margin: 1rem 3rem;
+  font-weight: 500;
+  text-shadow: 1.5px 1.5px rgb(214, 214, 214);
+}
+
+.modal__content_button {
+  align-self: flex-end;
+  border: none;
+  background: none;
+  color: rgb(48, 64, 141);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal__content_submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal__content_submit button {
+  border: none;
+  color: white;
+  background: rgb(48, 64, 141);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.modal__content_title {
+  color: rgb(48, 64, 141);
+}
+
+.modal__content_input {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+/* .modal__content_input label {
+  width: 50%;
+} */
+
+.modal__content_input input,
+.modal__content_input textarea {
+  width: 300px;
+  border: thin solid rgb(48, 64, 141);
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-left: 1rem;
+  font-family: Raleway;
+}
+
+@media screen and (max-width: 800px) {
+  .modal__content_input {
+    flex-direction: column;
+  }
+  .modal__content_input input,
+  .modal__content_input textarea {
+    margin-left: 0;
+  }
+}

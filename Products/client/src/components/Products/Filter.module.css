@@ -1,0 +1,63 @@
+.filter {
+  background: rgb(245, 245, 245);
+}
+
+.filter__label {
+  text-transform: capitalize;
+  color: rgb(48, 64, 141);
+  margin-bottom: 0;
+}
+
+.filter__result {
+  margin-top: 0;
+}
+
+.filter__result_count {
+  font-weight: 600;
+}
+
+.filter__buttons {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter__buttons_sort {
+  display: flex;
+  align-items: center;
+}
+
+.filter__buttons_sort p {
+  margin-right: 1rem;
+}
+
+.filter__buttons_sort button,
+.filter__buttons_paginate button {
+  border: none;
+  background: white;
+  padding: 0.5rem 1rem;
+  margin: 0 3px;
+  border-radius: 3px;
+  color: rgb(48, 64, 141);
+  cursor: pointer;
+}
+
+.filter__buttons_paginate button:hover {
+  background-color: rgb(48, 64, 141);
+  color: white;
+}
+
+.filter__buttons_selected {
+  background-color: rgb(48, 64, 141) !important;
+  color: white !important;
+}
+
+.filter__buttons_paginate {
+  display: flex;
+  align-items: center;
+}
+
+.filter__buttons_paginate p {
+  margin-right: 1rem;
+}

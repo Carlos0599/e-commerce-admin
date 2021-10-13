@@ -3,17 +3,6 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
-const innovationRoutes = require("./innovations/routes/innovationRoutes.js");
-const investmentRoutes = require("./innovations/routes/investmentRoutes.js");
-const userRoutes = require("./innovations/routes/userRoutes.js");
-
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/api/innovations", innovationRoutes);
-app.use("/api/investment", investmentRoutes);
-app.use("/api/user", userRoutes);
-
 // app.get("/", (req, res) => {
 
 //     const sqlInsert = "INSERT INTO products (product_id, product_price, product_category, product_pictures) VALUES ('2', '400', 'Electronics' )"
@@ -39,8 +28,7 @@ app.get("/", (req, res) => {
       }
     });
   });
-});
-
 app.listen(3000, () => {
   console.log("Running on port 3000");
 });
+
