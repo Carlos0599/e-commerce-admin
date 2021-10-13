@@ -1,19 +1,18 @@
-const bodyParser = require('body-parser');
-const express = require('express');
-const cors = require('cors');
+const bodyParser = require("body-parser");
+const express = require("express");
+const cors = require("cors");
 const app = express();
 
-const innovationRoutes = require('./innovations/routes/innovationRoutes.js');
-const investmentRoutes = require('./innovations/routes/investmentRoutes.js');
-const userRoutes = require('./innovations/routes/userRoutes.js');
+const innovationRoutes = require("./innovations/routes/innovationRoutes.js");
+const investmentRoutes = require("./innovations/routes/investmentRoutes.js");
+const userRoutes = require("./innovations/routes/userRoutes.js");
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use('/api/innovations', innovationRoutes);
-app.use('/api/investment', investmentRoutes);
-app.use('/api/user', userRoutes);
-
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use("/api/innovations", innovationRoutes);
+app.use("/api/investment", investmentRoutes);
+app.use("/api/user", userRoutes);
 
 // app.get("/", (req, res) => {
 
@@ -21,27 +20,27 @@ app.use('/api/user', userRoutes);
 //     db.query(sqlInsert, (err, result) => {
 //         res.send("Hello world");
 //     })
-    
+
 // });
 
-// get all users
+// get all usersssss
 app.get("/", (req, res) => {
-    db.getConnection((err, connection) => {
-        if(err) throw err
-        console.log('connected as id ${connection.threadId}');
+  db.getConnection((err, connection) => {
+    if (err) throw err;
+    console.log("connected as id ${connection.threadId}");
 
-        connection.query('SELECT * FROM users', (err, rows) =>{
-            connection.release();
+    connection.query("SELECT * FROM users", (err, rows) => {
+      connection.release();
 
-            if(!err){
-                res.send(rows);
-            }else{
-                console.log(err);
-            }
-        })
+      if (!err) {
+        res.send(rows);
+      } else {
+        console.log(err);
+      }
     });
+  });
 });
 
 app.listen(3000, () => {
-    console.log("Running on port 3000");
+  console.log("Running on port 3000");
 });
