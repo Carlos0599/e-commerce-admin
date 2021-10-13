@@ -1,0 +1,38 @@
+//-------INNOVATION API------------------//
+### GET ALL
+GET http://localhost:3001/api/innovations
+
+### GET BY ID
+GET http://localhost:3001/api/innovations/3
+
+### CREATE
+POST http://localhost:3001/api/innovations
+Content-Type: application/json
+
+{
+    "innovation_name"       : "Prime Vandal",
+    "innovation_description": "Insert description Here",
+    "innovation_story"      : "Insert innovation story here",
+    "innovation_title"      : "Insert innovation title here",
+    "innovation_status"     : "Insert innovation status here",
+    "product_id"            : 0,
+    "innovator_id"          : 1
+}
+
+### DELETE
+DELETE http://localhost:3001/api/innovations/10
+
+### UPDATE
+PUT http://localhost:3001/api/innovations
+Content-Type: application/json
+
+{
+    "innovation_id"         : 3 ,
+    "innovation_description": "Sample updated description",
+}
+
+
+
+
+
+
