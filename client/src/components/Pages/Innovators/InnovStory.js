@@ -2,13 +2,13 @@ import React, { Component, UseState } from 'react';
 import { BrowserRouter as Router, HashRouter, Route, Switch } from 'react-router-dom';
 import { GlobalStyle } from './globalStyles';
 import Hero from './components/Hero';
-import Products from './components/Products/';
+import Products from './components/Products';
 import ListPage from './components/containers/ListPage';
 import Navbar from './components/NavBar/NavBar';
 import Footer from './components/Footer/footer';
 
 import InnovYear from './components/InnovYear';
-import App from './App';
+import App from './Innov';
 import { useState , useEffect} from "react";
 import Axios from 'axios';
 

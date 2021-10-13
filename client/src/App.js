@@ -7,6 +7,11 @@ import users from "./components/Pages/users";
 import productsOrders from "./components/Pages/productsOrders";
 import exhibits from "./components/Pages/exhibits";
 import reports from "./components/Pages/reports";
+import React from 'react';
+import Innov from "./components/Pages/Innovators/Innov";
+import InnovStory from "./components/Pages/Innovators/InnovStory";
+import ViewStory from "./components/Pages/Innovators/SeeMore/ViewStory";
+
 
 const theme = createMuiTheme({
   palette: {
@@ -29,10 +34,17 @@ function App() {
       <Router>
         <div>
           <Layout />
+        
           <div>
             <Switch>
               <Route exact path="/" component={Dashboard} />
               <Route exact path="/users" component={users} />
+
+              {/* route to innovators page */}
+              <Route exact path='/innov' component={Innov} />
+              <Route exact path='/innovstory' component={InnovStory} />
+              <Route exact path='/story' component={ViewStory} />
+
               <Route
                 exact
                 path="/products & orders"

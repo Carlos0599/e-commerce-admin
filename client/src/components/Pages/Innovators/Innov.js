@@ -25,7 +25,7 @@ function createCard(cardContent) {
   );
 }
 
-function App() {
+function Innov() {
 
   const [innovatorList, setInnovatorList] = useState([]);
 
@@ -70,4 +70,4 @@ function App() {
   );
 }
 
-export default App;
+export default Innov;

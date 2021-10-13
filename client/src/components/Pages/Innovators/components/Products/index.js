@@ -53,7 +53,7 @@ const Products = ({ heading, heading1, data }) => {
 
                   <Link to={{ pathname: '/story', state: { title: product.innovator_title, name: product.innovator_fname + ' ' +product.innovator_lname, description: product.innovator_story, date: dateFormat(product.innovator_date, "mm/dd/yyyy")}}} >Read More</Link>
 
-                  <Link to='/app' >
+                  <Link to='/innov' >
                     <ProductButton1 >
                       <FaHeart />
                     </ProductButton1>
@@ -76,8 +76,8 @@ const Products = ({ heading, heading1, data }) => {
       </ProductWrapper>
 
       < Viewmore>
-        <Link to='/app' >
-          <ViewmoreButton to ='/app' >View More Stories <FaArrowRight /></ViewmoreButton>
+        <Link to='/innov' >
+          <ViewmoreButton >View More Stories <FaArrowRight /></ViewmoreButton>
         </Link>
       </Viewmore>
 

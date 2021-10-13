@@ -24,7 +24,7 @@ console.log({date});
              <h1 className= "heading1">INNOVATORS & STORIES</h1>
              <div className= "storyContainer">
                  <ul>
-                      <li className="linkpage"> <a href = "/"> Innovators </a> /  <a href = "/app"> Featured Innovator  </a>/ CoE prof gets international faculty award</li>
+                      <li className="linkpage"> <a href = "/innov"> Innovators </a> /  <a href = "/innovstory"> Featured Innovator  </a>/ CoE prof gets international faculty award</li>
                       {/* <li className="headingTitle">CoE prof gets international faculty award</li> */}
                       <li className="headingTitle">{title}</li>
                       <li className="subHeading">{name}</li>

@@ -32,7 +32,7 @@ const Hero = () => {
         <HeroItems1>
           <div className="storyContainer1">
             <ul>
-              <li className="linkpage1"><a href="/app"> <HeroP>  INNOVATORS</HeroP> </a> </li>
+              <li className="linkpage1"><a href="/innov"> <HeroP>  INNOVATORS</HeroP> </a> </li>
             </ul>
           </div>
 
